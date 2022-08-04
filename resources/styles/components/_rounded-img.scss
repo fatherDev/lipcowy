@@ -1,0 +1,41 @@
+.c-rounded-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  &__wrapper,
+  &__wrapper::after,
+  &__inner {
+    border-top-left-radius: 45%;
+    border-top-right-radius: 45%;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: max(95px, 25.333vw);
+    height: max(125px, 33.333vw);
+
+    @include media(tablet-lg) {
+      width: get-responsive-value(315.18);
+      height: get-responsive-value(419);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 5.715%;
+      width: 100%;
+      height: 104.295%;
+      box-shadow: 0 0 0 1px color(primary);
+      z-index: -1;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+}

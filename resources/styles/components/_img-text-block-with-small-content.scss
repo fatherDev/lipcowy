@@ -1,0 +1,126 @@
+.c-img-text-block-with-small-content {
+  margin: 90px 0;
+  position: relative;
+
+  @include media(tablet-lg) {
+    margin: 190px 0;
+  }
+
+  &__col {
+    grid-column: 1/-1;
+  }
+
+  &__col--left {
+    @include media(0, tablet-lg) {
+      margin-bottom: 50px;
+    }
+
+    @include media(tablet-lg) {
+      grid-column-end: 7;
+    }
+  }
+
+  &__col--right {
+    @include media(tablet-lg) {
+      grid-column-start: 7;
+    }
+  }
+
+  &__text-block-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__text-block {
+    .c-text-block__title {
+      margin-bottom: 30px;
+
+      @include media(tablet-lg) {
+        margin-bottom: get-responsive-value(88);
+        width: 90%;
+      }
+    }
+  }
+
+  &__img-wrapper {
+    margin-bottom: 40px;
+
+    @include media(tablet-lg) {
+      height: 95vh;
+      margin-bottom: 0;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__blocks-wrapper {
+    display: grid;
+    gap: 30px;
+
+    @include media(tablet-lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @include media(desktop) {
+      gap: rv(50);
+    }
+  }
+
+  &__block {
+    &.ui-fade-in {
+      transition-delay: calc(var(--i) * 0.1s);
+    }
+  }
+
+  &__block-title {
+    @include typo-menu;
+
+    display: block;
+    color: color(primary);
+    margin-bottom: 16px;
+    font-size: 14px;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(16);
+    }
+  }
+
+  &__block-desc {
+    @include typo-p2;
+
+    color: color(t-medium);
+  }
+
+  &__accent {
+    position: absolute;
+    z-index: -1;
+
+    @include media(tablet-lg) {
+      display: none;
+    }
+
+    &--bean-blob {
+      top: -133px;
+      left: 0;
+    }
+
+    &--ring {
+      top: -115px;
+      left: 0;
+      transform: translateX(-25%);
+      width: 95.12px;
+      height: 95.12px;
+    }
+
+    &--big-blob {
+      top: -159px;
+      right: 0;
+    }
+  }
+}

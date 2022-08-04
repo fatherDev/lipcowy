@@ -1,0 +1,44 @@
+{
+    "key": "group_6238558120e8f",
+    "title": "Single Client Panel Post",
+    "fields": [
+        {
+            "key": "field_6238565e19fe9",
+            "label": "Post wyróżniony",
+            "name": "is_featured",
+            "type": "true_false",
+            "instructions": "Zaznacz jeżeli chcesz aby post się wyświetlał na górze menu",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Czy post ma być wyróżniony?",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "client-posts"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1647859883
+}

@@ -1,0 +1,41 @@
+.c-tabs-faq-template {
+  color: color(t-dark);
+  margin-top: 56px;
+
+  @include media(tablet-lg) {
+    margin-top: get-responsive-value(50);
+  }
+
+  &__list {
+    @include reset--list;
+  }
+
+  &__list-item {
+    margin-bottom: 18px;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(23);
+    }
+  }
+
+  &__question {
+    @include typo-p2;
+
+    margin-bottom: 8px;
+    font-size: 18px;
+
+    @include media(tablet-lg) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__answer {
+    @include typo-p3;
+  }
+
+  &__btn {
+    position: sticky;
+    bottom: 0;
+    background-color: color(bg-light);
+  }
+}

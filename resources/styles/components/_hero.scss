@@ -1,0 +1,38 @@
+.c-hero {
+  &__media-gallery {
+    padding-top: 180px;
+    margin: 0 0 90px;
+
+    @include media(tablet-lg) {
+      padding-top: 216px;
+      margin-bottom: 190px;
+    }
+
+    .c-media-gallery__img,
+    .c-media-gallery__video,
+    .c-media-gallery__video-overlay {
+      @include media(tablet-lg) {
+        height: 48.75vw;
+      }
+    }
+
+    .c-media-gallery__text-block {
+      text-align: center;
+      text-transform: uppercase;
+      max-width: 815px;
+      margin: 0 auto;
+
+      .c-text-block__title {
+        @include media(tablet-lg) {
+          margin-bottom: min(80px, 5vw);
+        }
+      }
+    }
+
+    .c-animated-text {
+      & > .words {
+        transition-delay: calc(var(--index) * 0.1s);
+      }
+    }
+  }
+}

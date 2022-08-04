@@ -1,0 +1,91 @@
+.c-gallery-page {
+  padding-bottom: 50px;
+  overflow: hidden;
+
+  @include media(tablet-lg) {
+    padding-bottom: 140px;
+    .l-grid {
+      row-gap: 50px;
+    }
+  }
+
+  .l-grid {
+    row-gap: 30px;
+  }
+
+  &__cat-btn {
+    @include typo-p1;
+    color: color(t-medium);
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 30px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(50);
+    }
+
+    svg {
+      color: color(t-light);
+      opacity: 0.5;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__cat {
+    color: color(t-light);
+    opacity: 0.5;
+  }
+
+  &__pagination {
+    @include typo-p2;
+
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    margin-top: 50px;
+
+    .current {
+      color: color(primary);
+    }
+  }
+
+  &__big-blob {
+    position: absolute;
+    top: 200px;
+    left: -200px;
+    z-index: -1;
+    @include media(0, tablet-lg) {
+      display: none;
+    }
+  }
+
+  &__ring {
+    position: absolute;
+    bottom: -200px;
+    left: -350px;
+    z-index: -1;
+    @include media(0, tablet-lg) {
+      display: none;
+    }
+  }
+
+  &__cutlery {
+    position: absolute;
+    top: 50%;
+    left: -260px;
+    z-index: -1;
+    transform: translateY(-50%);
+    user-select: none;
+    @include media(0, tablet-lg) {
+      display: none;
+    }
+  }
+}

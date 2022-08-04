@@ -1,0 +1,26 @@
+.c-grid-gallery {
+  position: relative;
+  margin-bottom: 90px;
+
+  @include media(tablet-lg) {
+    margin-bottom: 190px;
+  }
+
+  &__list {
+    @include reset--list;
+
+    row-gap: 10px;
+    @include media(tablet-lg) {
+      row-gap: 40px;
+    }
+  }
+
+  &__item {
+    grid-column: 6 span/ 6 span;
+    max-height: get-responsive-value(480);
+
+    &:nth-child(n + 9) {
+      display: none;
+    }
+  }
+}

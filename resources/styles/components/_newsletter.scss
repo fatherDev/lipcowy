@@ -1,0 +1,55 @@
+.c-newsletter {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  .c-button__wrapper {
+    margin: 0 auto;
+  }
+
+  &__btn {
+    margin: 50px auto 0;
+
+    @include media(tablet-lg) {
+      margin-top: get-responsive-value(60);
+    }
+  }
+
+  &__container {
+    @include typo-p1;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: color(t-dark);
+
+    @include media(tablet-lg) {
+      max-width: get-responsive-value(936);
+      margin: 0 auto;
+    }
+
+    h1 {
+      @include typo-h2;
+
+      color: color(primary);
+      text-transform: uppercase;
+      margin-bottom: 50px;
+    }
+
+    p {
+      a {
+        @include transition;
+
+        transition-property: border-bottom-color;
+        display: inline-block;
+        color: color(primary);
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+          border-bottom: 1px solid color(primary);
+        }
+      }
+    }
+  }
+}

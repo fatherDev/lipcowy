@@ -1,0 +1,54 @@
+.c-floating-buttons {
+  @include media(0, tablet-lg) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @include media(tablet-lg) {
+    width: auto;
+    position: absolute;
+    top: 50vh;
+    right: 5%;
+    bottom: auto;
+    left: auto;
+    transform: translateX(50%);
+    display: grid;
+    gap: 19px;
+  }
+
+  &,
+  &__overlay {
+    z-index: 50;
+  }
+
+  &__overlay {
+    @include transition(0.5s);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      270deg,
+      #fffcf8 0%,
+      rgba(255, 252, 248, 0.74) 30.73%,
+      rgba(255, 252, 248, 0.21) 51.04%,
+      rgba(255, 252, 248, 0.04) 81.25%
+    );
+    transition-property: opacity, visibility;
+    pointer-events: none;
+
+    @include media(0, tablet-lg) {
+      display: none;
+    }
+
+    &.ui-invisible {
+      transition-delay: 0.1s;
+    }
+  }
+}

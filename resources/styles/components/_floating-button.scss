@@ -1,0 +1,131 @@
+.c-floating-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  color: color(primary);
+  background-color: color(white);
+  width: 30%;
+
+  @include media(0, tablet-lg) {
+    @include transition;
+
+    padding: 19px 24px;
+    flex-direction: row-reverse;
+    border-top: 1px solid color(primary-light);
+    border-right: 1px solid color(primary-light);
+
+    &:nth-child(2) {
+      flex-grow: 1;
+    }
+
+    .c-floating-button__icon-wrapper {
+      @include transition;
+
+      transition-property: background-color;
+    }
+    .c-floating-button__icon {
+      @include transition;
+
+      transition-property: fill;
+    }
+
+    &:hover {
+      -webkit-tap-highlight-color: transparent;
+      background-color: color(primary-light);
+
+      .c-floating-button__icon-wrapper {
+        background-color: color(primary);
+      }
+
+      .c-floating-button__icon {
+        color: color(white);
+      }
+    }
+  }
+
+  @include media(tablet-lg) {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: color(primary);
+    color: color(white);
+
+    &:hover {
+      .c-floating-button__text {
+        transform: translate(0, -50%);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .c-floating-button__icon {
+        transform: translate(calc(-50% - 48px), -50%);
+
+        &--hidden {
+          transform: translate(calc(-50%), -50%);
+        }
+      }
+    }
+  }
+
+  &__text {
+    @include typo-p3;
+
+    @include media(tablet-lg) {
+      @include typo-menu;
+      @include transition((0.4s, 0.4s, 0.4s), (ease, ease, ease));
+
+      opacity: 0;
+      position: absolute;
+      right: calc(100% + 11px);
+      top: 50%;
+      transform: translate(20px, -50%);
+      width: max-content;
+      color: color(primary);
+      visibility: hidden;
+      transition-property: transform, opacity, visibility;
+    }
+  }
+
+  &--light {
+    @include media(tablet-lg) {
+      background-color: transparent;
+      box-shadow: 0 0 0 1px color(primary);
+      color: color(primary);
+    }
+  }
+
+  &__icon-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    @include media(0, tablet-lg) {
+      width: 21px;
+      height: 21px;
+      border: 1px solid color(primary);
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+  }
+
+  &__icon {
+    @include transition(0.4s, cubic-bezier(0.75, -0.27, 0.3, 1.33));
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-property: transform;
+
+    @include media(0, tablet-lg) {
+      width: 10px;
+    }
+
+    &--hidden {
+      transform: translate(calc(-50% + 48px), -50%);
+    }
+  }
+}

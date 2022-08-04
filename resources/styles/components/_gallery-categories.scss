@@ -1,0 +1,67 @@
+.c-gallery-categories {
+  @include transition;
+  @include typo-h5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 111;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: color(secondary-dark);
+  color: color(white);
+
+  visibility: hidden;
+  opacity: 0;
+
+  &--active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 52px;
+    top: 61px;
+
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: color(white);
+    cursor: pointer;
+  }
+
+  &__list {
+    @include reset--list;
+
+    &:hover .c-gallery-categories__box {
+      opacity: 0.2;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    padding-bottom: 20px;
+
+    @include media(tablet-lg) {
+      padding-bottom: get-responsive-value(40);
+    }
+  }
+
+  &__box {
+    @include transition;
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+
+  &__index {
+    @include typo-menu;
+    display: block;
+    color: color(primary);
+  }
+}

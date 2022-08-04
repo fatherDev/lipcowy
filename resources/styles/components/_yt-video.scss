@@ -1,0 +1,23 @@
+.c-yt-video {
+  margin-bottom: 90px;
+
+  @include media(tablet-lg) {
+    margin-bottom: 190px;
+  }
+
+  iframe {
+    width: 100%;
+    object-fit: cover;
+
+    @include media(tablet-lg) {
+      height: 43.75vw;
+      max-height: none;
+    }
+
+    @include media(0, tablet-lg) {
+      min-height: 260px;
+      height: 69.3333vw;
+      max-height: 500px;
+    }
+  }
+}

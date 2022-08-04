@@ -1,0 +1,124 @@
+.c-text-block {
+  &__icon {
+    margin-bottom: 50px;
+  }
+
+  &__heading {
+    @include typo-h5;
+
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  &__heading {
+    p span {
+      color: color(primary) !important;
+    }
+  }
+
+  &__title {
+    @include typo-h3;
+
+    margin-bottom: 30px;
+    width: 100%;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(60);
+    }
+
+    span {
+      color: color(primary) !important;
+    }
+  }
+
+  &__desc {
+    @include typo-p2;
+
+    color: color(t-medium);
+
+    &--big {
+      @include typo-p1;
+
+      color: color(t-dark);
+      margin-bottom: 20px;
+
+      @include media(tablet-lg) {
+        margin-bottom: get-responsive-value(30);
+      }
+    }
+
+    a {
+      color: color(primary);
+    }
+  }
+
+  &-btn {
+    margin-top: 30px;
+
+    @include media(tablet-lg) {
+      margin-top: get-responsive-value(50);
+    }
+  }
+
+  &__bird,
+  &__circle-left,
+  &__circle-right,
+  &__blob {
+    position: absolute;
+    height: auto;
+  }
+
+  &__bird,
+  &__circle-right {
+    right: 0;
+    display: none;
+
+    @include media(tablet-lg) {
+      display: block;
+    }
+  }
+
+  &__blob,
+  &__circle-left {
+    left: 0;
+  }
+
+  &__circle-left {
+    top: -390px;
+    z-index: -1;
+    width: 220px;
+
+    @include media(tablet-lg) {
+      width: get-responsive-value(342);
+    }
+  }
+
+  &__blob {
+    bottom: 50%;
+    z-index: -1;
+    width: 168px;
+
+    @include media(tablet-lg) {
+      bottom: -50%;
+      width: get-responsive-value(520);
+    }
+  }
+
+  &__circle-right {
+    bottom: -40%;
+    width: get-responsive-value(192);
+  }
+
+  &__bird {
+    bottom: -50%;
+    width: 100px;
+    z-index: 2;
+
+    @include media(tablet-lg) {
+      width: get-responsive-value(330);
+    }
+  }
+}

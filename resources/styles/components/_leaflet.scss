@@ -1,0 +1,25 @@
+.leaflet {
+  &-custom-marker-shadow {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: pulse 2s infinite linear;
+    pointer-events: none;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+
+  33% {
+    transform: scale(0.6);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

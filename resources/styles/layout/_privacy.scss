@@ -1,0 +1,59 @@
+.l-privacy {
+  padding: 180px 0 90px 0;
+
+  @include media(tablet-lg) {
+    padding: 220px 0 190px 0;
+  }
+
+  &__title {
+    @include typo-h2;
+    text-transform: uppercase;
+    color: color(primary);
+    margin-bottom: 40px;
+
+    @include media(tablet-lg) {
+      margin-bottom: 140px;
+    }
+  }
+
+  &__inner {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    strong {
+      @include typo-p1;
+      color: color(t-dark);
+    }
+
+    p,
+    ul {
+      @include typo-p2;
+      color: color(t-medium);
+    }
+
+    ul {
+      @include reset--list;
+
+      li {
+        margin-left: 10px;
+        padding-left: 10px;
+
+        &::marker {
+          content: '› ';
+          color: color(primary);
+        }
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include typo-h3;
+    }
+  }
+}

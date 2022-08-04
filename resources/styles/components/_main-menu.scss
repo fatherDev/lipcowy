@@ -1,0 +1,115 @@
+.c-nav__list {
+  display: flex;
+  align-items: center;
+  @include reset--list;
+
+  &,
+  .sub-menu {
+    @include reset--list;
+    @include typo-menu;
+  }
+
+  .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 12px);
+    background: color(bg-light);
+    @include transition;
+
+    .menu-item {
+      margin: 16px 30px;
+      white-space: nowrap;
+
+      a {
+        color: color(t-medium);
+      }
+
+      &:nth-last-of-type(1) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .menu-item {
+    position: relative;
+    margin-right: get-responsive-value(26);
+    padding: 8px 0;
+    @include transition;
+
+    a {
+      position: relative;
+      color: color(t-dark);
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        height: 1px;
+        background: color(primary);
+        transform: scaleX(0);
+        @include transition;
+      }
+
+      &::before {
+        left: 0;
+        transform-origin: right;
+      }
+
+      &::after {
+        right: 0;
+        transform-origin: left;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &:hover {
+      .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    &:nth-last-of-type(1) {
+      margin-right: 0;
+    }
+
+    &.is-highlighted {
+      color: color(primary-dark);
+    }
+  }
+}
+
+.nav-primary {
+  display: none;
+
+  @include media(tablet-lg) {
+    display: block;
+  }
+}
+
+.home {
+  .c-nav__list {
+    .menu-item {
+      a {
+        color: color(white);
+      }
+    }
+
+    .sub-menu {
+      .menu-item {
+        a {
+          color: color(t-medium);
+        }
+      }
+    }
+  }
+}

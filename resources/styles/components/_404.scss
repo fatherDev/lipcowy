@@ -1,0 +1,97 @@
+.c-404 {
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  @include media(0, tablet-lg) {
+    min-height: 100vh;
+  }
+
+  @include media(tablet-lg) {
+    height: 100vh;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    @include media(mobile) {
+      max-width: get-responsive-value(1085);
+    }
+  }
+
+  &__title {
+    @include typo-h2;
+
+    color: color(secondary);
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    @include typo-h1;
+
+    display: inline-block;
+    margin-bottom: 20px;
+    color: color(primary);
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(23);
+    }
+  }
+
+  &__btn {
+    @include transition;
+    @include typo-menu;
+
+    display: inline-block;
+    font-size: 14px;
+    padding: 10px 0;
+    margin-top: 40px;
+    border-style: none;
+    border-bottom: 1px solid color(secondary-light);
+    background-color: transparent;
+    color: color(t-dark);
+    transition-property: color;
+    cursor: pointer;
+
+    &:hover {
+      color: color(primary);
+    }
+
+    @include media(tablet-lg) {
+      margin-top: get-responsive-value(100);
+    }
+  }
+
+  &__accent {
+    position: absolute;
+    z-index: -1;
+
+    &--big-leaf {
+      display: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scaleY(-1) rotate(288deg);
+
+      @include media(tablet-lg) {
+        display: block;
+        width: get-responsive-value(1100);
+      }
+
+      @include media(desktop) {
+        width: get-responsive-value(1400);
+      }
+    }
+
+    &--left-bottom-blobs {
+      left: 0;
+      bottom: 0;
+      transform: translateY(40%);
+      width: 100px;
+      height: auto;
+
+      @include media(tablet-lg) {
+        width: get-responsive-value(300);
+      }
+    }
+  }
+}

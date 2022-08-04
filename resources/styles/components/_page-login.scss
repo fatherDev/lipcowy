@@ -1,0 +1,124 @@
+.c-page-login {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  color: color(secondary-dark);
+
+  &__title {
+    @include typo-h2;
+    text-transform: uppercase;
+    margin: 13px 0 0;
+  }
+
+  &__rounded-img {
+    width: 120px;
+    height: 177px;
+    margin: 28px auto 0;
+
+    @include media(tablet-lg) {
+      width: get-responsive-value(120);
+      height: get-responsive-value(177);
+    }
+
+    &::after {
+      bottom: 1px;
+    }
+
+    &::after,
+    .c-rounded-img__inner {
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+
+      @include media(tablet-lg) {
+        border-top-left-radius: get-responsive-value(150);
+        border-top-right-radius: get-responsive-value(150);
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 50px;
+    background-color: color(secondary-light);
+    display: block;
+    margin-top: 30px;
+    text-transform: uppercase;
+    @include media(tablet-lg) {
+      @include typo-menu;
+    }
+  }
+
+  &__form {
+    max-width: 250px;
+    margin: 60px auto 0;
+
+    .um-field {
+      padding: 0 0 30px;
+    }
+
+    .um {
+      .um-form {
+        .um-form-field {
+          @include transition;
+          @include typo-p3;
+
+          display: block;
+          color: color(t-dark) !important;
+          padding: 0 24px !important;
+          background-color: transparent !important;
+          border: none !important;
+          border-bottom: 1px solid rgba(122, 116, 103, 0.2) !important;
+          border-radius: 0;
+
+          &::placeholder {
+            color: color(t-light) !important;
+          }
+
+          &:focus {
+            border: none !important;
+            border-bottom: 1px solid color(primary) !important;
+            border-radius: 0;
+          }
+
+          &[type='password'] {
+            background-image: url('../images/key.png');
+            background-repeat: no-repeat;
+            background-position: 0 50%;
+          }
+
+          &[type='text'] {
+            background-image: url('../images/user-line.png');
+            background-repeat: no-repeat;
+            background-position: 0 50%;
+          }
+        }
+
+        .um-field-error {
+          background-color: color(danger) !important;
+        }
+        .um-field-arrow {
+          color: color(danger) !important;
+        }
+
+        .um-col-alt {
+          margin: 0;
+        }
+
+        .um-row {
+          margin-bottom: 20px !important;
+        }
+      }
+    }
+  }
+}
+
+#um-submit-btn {
+  @include typo-menu;
+
+  background-color: color(secondary-light) !important;
+  border-radius: 50px !important;
+  color: color(t-dark) !important;
+  text-transform: uppercase !important;
+}

@@ -1,0 +1,50 @@
+.l-posts {
+  margin: 90px 0;
+
+  @include media(tablet-lg) {
+    margin: 190px 0;
+  }
+
+  &__circle,
+  &__circle-right,
+  &__blob {
+    position: absolute;
+    height: auto;
+    display: none;
+
+    @include media(tablet-lg) {
+      display: block;
+    }
+  }
+
+  &__circle-right {
+    right: 0;
+    bottom: -520px;
+    z-index: -1;
+  }
+
+  &__circle,
+  &__blob {
+    left: 0;
+  }
+
+  &__circle {
+    bottom: -340px;
+
+    @include media(tablet-lg) {
+      width: get-responsive-value(80);
+    }
+  }
+
+  &__circle-right {
+    @include media(tablet-lg) {
+      width: get-responsive-value(458);
+    }
+  }
+
+  &__blob {
+    bottom: -565px;
+    width: 100%;
+    z-index: -1;
+  }
+}

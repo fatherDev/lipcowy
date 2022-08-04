@@ -1,0 +1,44 @@
+.c-footer-nav {
+  &__list {
+    @include reset--list;
+    @include typo-p3;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    row-gap: 20px;
+    padding: 30px 20px;
+    border-top: 1px solid color(primary);
+    border-bottom: 1px solid color(primary);
+
+    @include media(tablet-lg) {
+      padding: 63px 20px;
+      @include typo-menu;
+    }
+
+    li {
+      @include transition;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: color(t-dark);
+      &::before {
+        content: '';
+        width: 10px;
+        height: 4px;
+        background-image: url('../images/nav-marker.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &:first-child::before {
+        content: none;
+      }
+
+      &:hover {
+        color: color(primary);
+      }
+    }
+  }
+}

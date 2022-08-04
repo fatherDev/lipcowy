@@ -1,0 +1,129 @@
+.l-sliding-img {
+  margin-top: 90px;
+
+  @include media(tablet-lg) {
+    margin-top: 190px;
+  }
+
+  &__bg--secondary {
+    background: color(secondary-dark);
+    color: white;
+    padding: 90px 0;
+    margin-top: 90px;
+
+    @include media(tablet-lg) {
+      padding: 190px 0;
+      margin-top: 190px;
+    }
+  }
+
+  &__text-block {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 30px auto;
+
+    @include media(tablet-lg) {
+      margin: 0 auto get-responsive-value(80) auto;
+    }
+  }
+
+  &__title {
+    @include typo-h5;
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    @include typo-p2;
+    margin-bottom: 30px;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(60);
+    }
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__col--left {
+    grid-column: 1/13;
+    grid-row: 2;
+
+    @include media(tablet-lg) {
+      grid-column: 1 / 6;
+      grid-row: auto;
+    }
+  }
+
+  &__col--right {
+    @include media(0, tablet-lg) {
+      grid-column: 1/-1;
+    }
+
+    @include media(tablet-lg) {
+      width: 50%;
+    }
+  }
+
+  &__col-title {
+    @include typo-h4;
+    margin-bottom: 20px;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(40);
+    }
+
+    .highlighted {
+      color: color(primary-dark);
+    }
+  }
+
+  &__col-subtitle {
+    @include typo-p1;
+    margin-bottom: 20px;
+  }
+
+  &__img-sticky-wrapper,
+  &__img-wrapper {
+    position: static;
+    right: 0;
+
+    @include media(tablet-lg) {
+      position: absolute;
+    }
+  }
+
+  &__img-wrapper {
+    top: 0;
+    width: 100%;
+    margin-bottom: 30px;
+
+    @include media(tablet-lg) {
+      width: 50vw;
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+
+    @include media(tablet-lg) {
+      height: 100vh;
+    }
+  }
+
+  .c-circle-button {
+    margin-top: 0;
+    margin-right: 0;
+    color: color(primary-dark);
+    letter-spacing: 10px;
+    word-spacing: 18px;
+  }
+
+  &__leaf {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+}

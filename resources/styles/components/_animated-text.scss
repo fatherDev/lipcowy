@@ -1,0 +1,24 @@
+.c-animated-text {
+  &.line {
+    display: block;
+    overflow: hidden;
+    padding: 10px 0;
+    margin: -10px 0;
+
+    .words {
+      display: inline-block;
+      transform: translateY(115%);
+      transition: transform 0.8s cubic-bezier(0, 0, 0, 0.94);
+    }
+
+    &.is-inview {
+      .words {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .word.empty {
+    display: none;
+  }
+}

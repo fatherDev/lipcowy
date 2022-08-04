@@ -1,0 +1,23 @@
+.l-single-galeria {
+  position: relative;
+  overflow: hidden;
+  .c-gallery-hero {
+    &__blob {
+      bottom: -550px;
+    }
+  }
+
+  &__big-blob {
+    position: absolute;
+    bottom: -500px;
+    left: -600px;
+    z-index: -2;
+  }
+
+  &__cutlery {
+    position: absolute;
+    bottom: 290px;
+    left: -263px;
+    z-index: -1;
+  }
+}

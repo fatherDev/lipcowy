@@ -1,0 +1,29 @@
+ul.splide__pagination {
+  height: 16px;
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  .splide__pagination {
+    &__page {
+      @include transition((0.4s, 0.4s));
+
+      width: 10px;
+      height: 10px;
+      transform: rotate(0) scale(0.6);
+      background-color: color(primary);
+      border-radius: 0;
+      margin: 0 5px;
+
+      transition-property: transform, background-color;
+
+      &.is-active {
+        transform: rotate(-45deg) scale(1);
+        background-color: transparent;
+        border: 1px solid color(primary);
+      }
+    }
+  }
+}

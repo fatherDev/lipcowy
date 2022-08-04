@@ -1,0 +1,151 @@
+.c-contact-form {
+  max-width: 715px;
+  margin: 0 auto;
+
+  &__grid {
+    display: grid;
+    row-gap: 21px;
+    column-gap: 29px;
+
+    @include media(mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    margin: 0 0 0 auto;
+    letter-spacing: 7px;
+    word-spacing: 8px;
+
+    @include media(tablet-lg) {
+      letter-spacing: 12px;
+      word-spacing: 14px;
+    }
+  }
+
+  &__item {
+    &--full {
+      @include media(mobile) {
+        grid-column: 2 span/2 span;
+      }
+    }
+
+    input:not(input[type='checkbox']),
+    textarea {
+      @include transition;
+      font-size: 15px;
+
+      width: 100%;
+      background-color: color(secondary);
+      border: none;
+      padding: 19px 30px;
+      color: white;
+      border: 1px solid transparent;
+
+      resize: vertical;
+      outline: none;
+
+      &::placeholder {
+        color: white;
+      }
+
+      &:not(:placeholder-shown) {
+        background-color: rgba(76, 99, 101, 0.2);
+      }
+
+      &:focus,
+      &:active {
+        background-color: transparent;
+        border-color: color(secondary);
+      }
+
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px color(secondary) inset;
+      }
+
+      &.wpcf7-not-valid {
+        border-color: color(danger);
+        background-color: transparent;
+      }
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+
+    input[type='date'] {
+      background-image: url('../images/calendar.png');
+      background-repeat: no-repeat;
+      background-position: 92% 50%;
+      cursor: pointer;
+
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+    }
+
+    .rodo {
+      text-align: left;
+      font-size: 11px;
+      color: color(secondary-light);
+
+      .wpcf7-list-item {
+        margin: 0;
+      }
+
+      label {
+        display: flex;
+        gap: 10px;
+      }
+
+      input {
+        flex-shrink: 0;
+        position: relative;
+        width: 16px;
+        height: 16px;
+
+        color: white;
+        border-radius: 2px;
+        background-color: color(secondary);
+        appearance: none;
+
+        &::after {
+          @include transition;
+          content: '\2713';
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+        }
+        &:checked {
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wpcf7-not-valid-tip {
+  color: color(danger) !important;
+  text-align: left;
+}

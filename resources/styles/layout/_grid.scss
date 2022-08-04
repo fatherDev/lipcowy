@@ -1,0 +1,41 @@
+.l-grid {
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  @include media(tablet-lg) {
+    column-gap: 50px;
+  }
+
+  &__col-offset {
+    // margin-left: 6.5vw;
+
+    @include media(tablet-lg) {
+      margin-left: 3.2vw;
+    }
+
+    @include media(tablet-lg) {
+      margin-left: 4.2vw;
+    }
+
+    @include media(desktop) {
+      margin-left: 3.5vw;
+    }
+  }
+
+  &__col-offset--right {
+    // margin-right: 6.5vw;
+
+    @include media(tablet-lg) {
+      margin-right: 3.2vw;
+    }
+
+    @include media(tablet-lg) {
+      margin-right: 4.2vw;
+    }
+
+    @include media(desktop) {
+      margin-right: 3.5vw;
+    }
+  }
+}

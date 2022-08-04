@@ -1,0 +1,29 @@
+.c-socials-list {
+  @include reset--list;
+  display: flex;
+  gap: 18px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &--vertical {
+    display: grid;
+    gap: 36px;
+
+    .c-socials-list__item {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: currentColor;
+      }
+    }
+  }
+}

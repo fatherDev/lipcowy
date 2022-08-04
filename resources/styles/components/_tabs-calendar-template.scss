@@ -1,0 +1,84 @@
+.c-tabs-calendar-template {
+  &__btn {
+    position: sticky;
+    bottom: 0;
+    background-color: color(bg-light);
+  }
+}
+
+.c-calendar {
+  &__year-title {
+    @include typo-p1;
+
+    margin-bottom: 30px;
+  }
+
+  &__wrapper {
+    margin-bottom: 30px;
+  }
+
+  &__month-title,
+  &__day-number {
+    @include typo-p2;
+  }
+
+  &__month-title {
+    margin-right: 30px;
+  }
+
+  &__day-name {
+    @include typo-p3;
+
+    color: color(t-medium);
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    &::after {
+      position: absolute;
+      top: 24px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: color(secondary-light);
+      content: '';
+
+      @include media(tablet) {
+        top: 29px;
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    z-index: -1;
+  }
+
+  &__blob {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__days-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  &__day {
+    text-align: end;
+    margin-left: 10px;
+  }
+
+  &__short-info {
+    padding-bottom: 20px;
+  }
+}

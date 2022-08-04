@@ -1,0 +1,40 @@
+.c-aside-nav {
+  padding-bottom: 100px;
+
+  &__list {
+    @include reset--list;
+  }
+
+  &__subtitle {
+    @include typo-p2;
+
+    color: color(secondary-light);
+    opacity: 0.5;
+    margin: 30px 0 10px;
+
+    @include media(tablet-lg) {
+      margin: 50px 0 30px;
+      @include typo-menu;
+    }
+  }
+
+  &__item {
+    @include typo-p1;
+
+    margin-bottom: 20px;
+
+    &--active {
+      color: color(primary-dark);
+    }
+
+    a {
+      @include transition;
+
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-color: color(secondary);
+      }
+    }
+  }
+}

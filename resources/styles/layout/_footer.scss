@@ -1,0 +1,95 @@
+.l-footer {
+  background-color: color(bg-light);
+  color: color(t-dark);
+
+  a {
+    @include transition;
+    display: inline-flex;
+    &:hover {
+      color: color(primary);
+    }
+  }
+
+  &__logo {
+    display: flex;
+    padding: 30px 0;
+    justify-content: center;
+    @include media(0, tablet-lg) {
+      padding: 20px 0;
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  &__privacy {
+    grid-column: 1/13;
+
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    @include media(0, tablet-lg) {
+      justify-content: center;
+    }
+    @include media(tablet-lg) {
+      grid-column: 1/5;
+    }
+  }
+
+  &__socials {
+    grid-column: 1/13;
+    display: flex;
+    justify-content: center;
+    color: color(t-medium);
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+    @include media(tablet-lg) {
+      grid-column: 6/8;
+    }
+  }
+
+  &__prograffing {
+    grid-column: 1/13;
+    text-align: center;
+    padding-bottom: 20px;
+
+    @include media(tablet-lg) {
+      grid-column: 10/13;
+      text-align: right;
+      padding-bottom: 0;
+    }
+  }
+
+  &__prograffing-logo {
+    @include transition;
+    color: color(t-medium);
+    margin-left: 4px;
+    width: auto;
+    height: 9px;
+
+    &:hover {
+      color: color(t-dark);
+    }
+  }
+
+  .l-grid {
+    row-gap: 26px;
+  }
+}
+
+body {
+  &.page-template-template-restauracja,
+  &.page-template-template-bankiety,
+  &.page-template-template-catering,
+  &.page-template-template-hotel,
+  &.page-template-template-wesela {
+    .l-footer {
+      @include media(0, tablet-lg) {
+        padding-bottom: 60px;
+      }
+    }
+  }
+}

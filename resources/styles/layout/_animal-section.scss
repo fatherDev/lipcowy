@@ -1,0 +1,72 @@
+.l-animal-section {
+  position: relative;
+  overflow: hidden;
+
+  .left-top-blob,
+  .half-circle-left,
+  .animal,
+  .half-circle-right {
+    position: absolute;
+  }
+
+  .half-circle-right {
+    right: 0;
+  }
+
+  .half-circle-right {
+    top: 24%;
+    z-index: -2;
+    height: 130px;
+
+    @include media(0, tablet-lg) {
+      right: -11%;
+      top: 22%;
+    }
+
+    @include media(tablet-lg) {
+      height: unset;
+      top: 20%;
+      width: get-responsive-value(200);
+    }
+  }
+
+  .animal {
+    top: 26%;
+    width: 90px;
+    right: -16px;
+    z-index: -1;
+
+    @include media(tablet-lg) {
+      width: get-responsive-value(314);
+      right: 0;
+    }
+  }
+
+  .left-top-blob,
+  .half-circle-left {
+    left: 0;
+  }
+
+  .left-top-blob {
+    top: -160px;
+    height: 400px;
+
+    @include media(tablet-lg) {
+      top: 0;
+      transform: translateY(-22.16%);
+      height: get-responsive-value(722);
+    }
+  }
+
+  .half-circle-left {
+    top: -250px;
+    z-index: -1;
+    height: 350px;
+
+    @include media(tablet-lg) {
+      top: 0;
+      transform: translateY(-42.808%);
+      height: get-responsive-value(584);
+    }
+  }
+}

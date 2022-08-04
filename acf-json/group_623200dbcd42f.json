@@ -1,0 +1,175 @@
+{
+    "key": "group_623200dbcd42f",
+    "title": "Single Gallery Post",
+    "fields": [
+        {
+            "key": "field_623204532e845",
+            "label": "Treść",
+            "name": "content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_62320462906e9": {
+                    "key": "layout_62320462906e9",
+                    "name": "gallery",
+                    "label": "Pojedyncze zdjęcie lub slider",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_623200e9c3258",
+                            "label": "Pojedyncze zdjęcie lub slider",
+                            "name": "gallery",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62209f44b1a4f",
+                                "field_6220b26041e08"
+                            ],
+                            "display": "group",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6232047c2e846": {
+                    "key": "layout_6232047c2e846",
+                    "name": "grid_gallery",
+                    "label": "Galeria grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6232049b2e847",
+                            "label": "Galeria grid",
+                            "name": "grid_gallery",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "insert": "append",
+                            "library": "all",
+                            "min": "",
+                            "max": "",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_623204b42e848": {
+                    "key": "layout_623204b42e848",
+                    "name": "yt_video",
+                    "label": "Video z youtube",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_623204c52e849",
+                            "label": "Video z youtube",
+                            "name": "yt_video",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_623204d42e84a": {
+                    "key": "layout_623204d42e84a",
+                    "name": "video",
+                    "label": "Video zwykłe",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_623204df2e84b",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62209f44b1a4f",
+                                "field_6220b3aa41e09",
+                                "field_62320926abbd0"
+                            ],
+                            "display": "group",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Dodaj wiersz",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "galeria"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1647446380
+}

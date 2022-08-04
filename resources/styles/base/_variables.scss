@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* Maps
+========================================================================== */
+/*
+    The names and values of variables in maps are just suggestions/random values.
+    Feel free to add new values, modify both the values and/or keys of the items depending on the project and your prefferences.
+    For each map, a functions is defined (in base/_functions.scss).
+    By default, function names are single a singular form of the map's variable name.
+    Eg. To use the "main" color, a getter function "color" is defined.
+    To use it, simply call: color(main).
+*/
+
+$breakpoints: (
+  mobile-sm: 22.5em,
+  // 360px
+  mobile: 48em,
+  // 768px
+  tablet: 64em,
+  // 1024px
+  tablet-lg: 71.25em,
+  // 1140px
+  desktop: 87.5em,
+  // 1400px
+);
+
+$orientations: (
+  portrait: portrait,
+  landscape: landscape,
+);
+
+$colors: (
+  main: #1c1c1c,
+  primary: #bc9856,
+  primary-dark: #ffc55b,
+  primary-light: #fcf7f0,
+  secondary: #4c6365,
+  secondary-dark: #405254,
+  secondary-light: #f1f2ee,
+  t-dark: #57534b,
+  t-medium: #7a7467,
+  t-light: #a39b8a,
+  bg-light: #fffcf8,
+  danger: #df2323,
+  white: #fff,
+  white-50: rgba(#fff, 0.5),
+  bg-grey: #d3d3d3,
+  black: #000,
+);
+
+// Set main font size to body (eg. 12px), then refer to it using rem, eg. secondary: 2rem -> 24px
+$font-sizes: (
+  main: 16px,
+);
+
+$font-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+);
+
+// 1.14 / 1.2 / 1.25 / 1.33 / 1.4 / 1.5 / 1.6 / 1.71 / 1.75 / 2 / 2.3
+$line-heights: (
+  basic: 1,
+  extra-tiny: 1.1,
+  tiny: 1.2,
+  small: 1.25,
+  default: 1.3,
+  normal: 1.4,
+  standard: 1.45,
+  medium: 1.5,
+  large: 1.6,
+  extra-large: 1.71,
+  big: 1.8,
+  huge: 2,
+  enormous: 2.3,
+);
+
+$letter-spacings: (
+  basic: 0,
+  extra-small: 0.01em,
+  small: 0.03em,
+  large: 0.1em,
+);
+
+$offsets: (
+  default: 16px,
+  large: 24px,
+  small: 8px,
+);
+
+$fonts: (
+  main: #{'EB Garamond',
+  sans-serif},
+);
+
+$defaults: (
+  border-radius: 4px,
+  line-height: 1.2,
+);
+
+/* Standalone variables
+========================================================================== */
+$white-space: 1em;
+$form-control-height: 2rem;
+
+// inner
+$size-inner-width: 1320px;
+$size-inner-padding-mb: 1rem;
+$size-inner-padding: 2rem;
+
+$size-inner-sm-width: 1236px;
+// $size-inner-padding-mb: 1rem;
+$size-inner-padding: 2.75rem;
+$size-inner-padding-wide: 2rem;
+
+// ui width
+$size-ui-small-width: 864px;
+
+// max value screen width
+$maxValueScreenWidth: 1600;

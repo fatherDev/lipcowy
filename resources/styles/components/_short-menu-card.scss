@@ -1,0 +1,167 @@
+.c-short-menu-card {
+  position: relative;
+  background-color: color(secondary-dark);
+
+  &__img-wrapper,
+  &__text-content-wrapper {
+    @include media(tablet-lg) {
+      height: 77.7777vh;
+      max-height: 760px;
+    }
+  }
+
+  &__img-wrapper {
+    grid-column: 1/-1;
+
+    @include media(tablet-lg) {
+      grid-column: 1/7;
+      width: calc(100% + 25px);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__text-content-wrapper {
+    color: color(white);
+  }
+
+  &__title,
+  &__btn {
+    color: color(primary-dark);
+  }
+
+  &__inner {
+    grid-column: 1/-1;
+
+    @include media(tablet-lg) {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__text-content {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+
+    @include media(tablet-lg) {
+      grid-column: 8/-1;
+      padding: min(8.8888vh, 80px) 0;
+    }
+  }
+
+  &__grid {
+    &--text-content {
+      height: 100%;
+    }
+  }
+
+  &__title {
+    @include typo-h5;
+
+    display: block;
+    margin-bottom: 30px;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(50);
+    }
+  }
+
+  &__list {
+    @include reset--list;
+  }
+
+  &__list-wrapper {
+    flex-grow: 1;
+    margin-bottom: 50px;
+    overflow: auto;
+    scrollbar-color: color(primary-light) rgba(color(primary-light), 0.1);
+    scrollbar-width: thin;
+
+    @include media(tablet-lg) {
+      max-height: calc(40.2vh - #{get-responsive-value(50)});
+      width: calc(100% + 10%);
+      padding-right: 10%;
+    }
+
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-thumb {
+      border-radius: 60px;
+    }
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      box-shadow: inset 0 0 0 3px color(primary-light);
+      border-left: 1.5px solid transparent;
+      border-right: 1.5px solid transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      width: 3px;
+      background-color: color(primary-light);
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 12px;
+
+    @include media(tablet-lg) {
+      margin-bottom: 16px;
+      margin-right: 30px;
+    }
+  }
+
+  &__list-item-line {
+    @include typo-p1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+
+    @include media(tablet-lg) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__list-item-desc {
+    @include typo-p3;
+
+    font-size: 15px;
+    color: color(primary-light);
+  }
+
+  &__list-item-price {
+    flex-shrink: 0;
+  }
+
+  &:nth-child(odd) {
+    .c-short-menu-card__img-wrapper {
+      @include media(tablet-lg) {
+        grid-column: 7/-1;
+        transform: translateX(-25px);
+      }
+    }
+
+    .c-short-menu-card__text-content {
+      @include media(tablet-lg) {
+        grid-column: 1/6;
+      }
+    }
+  }
+}

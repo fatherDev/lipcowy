@@ -1,0 +1,62 @@
+.c-tabs-contact-template {
+  margin-top: 50px;
+  color: color(t-dark);
+
+  @include media(tablet-lg) {
+    margin-bottom: get-responsive-value(50);
+  }
+
+  &__title {
+    @include typo-p1;
+
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 22px;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(50);
+    }
+  }
+
+  &__block-wrapper {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-bottom: 14px;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(14);
+    }
+  }
+
+  &__label {
+    @include typo-menu;
+
+    font-size: 14px;
+    color: color(t-light);
+  }
+
+  &__text {
+    @include typo-p2;
+
+    font-size: 18px;
+  }
+
+  &__social-media {
+    margin-top: 30px;
+    color: color(primary);
+
+    @include media(tablet-lg) {
+      margin-top: get-responsive-value(50);
+    }
+  }
+
+  a {
+    @include transition;
+
+    &:hover {
+      color: color(primary);
+    }
+  }
+}

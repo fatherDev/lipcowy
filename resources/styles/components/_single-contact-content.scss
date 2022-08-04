@@ -1,0 +1,122 @@
+.c-single-contact-content {
+  position: relative;
+  padding-top: 140px;
+
+  @include media(tablet-lg) {
+    height: 100vh;
+    padding-top: 116px;
+    overflow: hidden;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__col {
+    grid-column: 1/-1;
+
+    &--left {
+      @include media(0, tablet-lg) {
+        padding-bottom: 40px;
+      }
+
+      @include media(tablet-lg) {
+        grid-column: 1/7;
+      }
+    }
+  }
+
+  &__map-container,
+  &__map {
+    @include media(tablet-lg) {
+      height: calc(100vh - 116px);
+    }
+  }
+
+  &__map-container {
+    @include media(tablet-lg) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100vh;
+    }
+  }
+
+  &__btn-wrapper {
+    padding: 30px 0;
+
+    @include media(0, tablet-lg) {
+      bottom: 0;
+      margin-top: 20px;
+      margin-bottom: -20px;
+      padding: 20px 0;
+    }
+
+    @include media(tablet-lg) {
+      @include transition;
+
+      position: fixed;
+      bottom: 0;
+    }
+  }
+
+  &__tabs-wrapper {
+    @include hide-scrollbar;
+
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    overflow: auto;
+    background-color: color(bg-light);
+
+    @include media(0, tablet-lg) {
+      @include transition;
+
+      transition-property: top;
+      margin: 0;
+      position: sticky;
+      top: var(--top-sticky-position);
+      bottom: 0;
+      z-index: 2;
+    }
+
+    @include media(tablet-lg) {
+      margin-top: get-responsive-value(40);
+    }
+  }
+
+  &__tab {
+    flex-shrink: 0;
+
+    &--outer {
+      @include typo-menu;
+      @include transition;
+
+      transition-property: color, border-color;
+      font-size: 14px;
+      margin-right: 30px;
+      padding: 5px 0;
+      border-bottom: 1px solid transparent;
+
+      @include media(0, tablet-lg) {
+        padding-top: 20px;
+      }
+
+      @include media(tablet-lg) {
+        margin-right: get-responsive-value(30);
+      }
+
+      &:hover,
+      &-active {
+        color: color(primary);
+        border-color: color(primary);
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

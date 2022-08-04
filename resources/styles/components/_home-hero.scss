@@ -1,0 +1,139 @@
+.c-home-hero {
+  position: relative;
+  z-index: 4;
+  color: color(white);
+
+  @include media(tablet-lg) {
+    height: 100vh;
+  }
+
+  &__slide {
+    padding: 120px 0 60px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media(0, tablet-lg) {
+      @include inner;
+    }
+
+    @include media(tablet-lg) {
+      height: 100vh;
+    }
+  }
+
+  &__slide-bg,
+  &__slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__slide-overlay {
+    mix-blend-mode: multiply;
+    object-position: center top;
+  }
+
+  &__slide-text-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  &__slide-title {
+    @include typo-h1;
+
+    margin-bottom: 50px;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(50);
+    }
+  }
+
+  &__slide-desc {
+    @include typo-p1;
+
+    max-width: 660px;
+    margin-bottom: 50px;
+
+    @include media(tablet-lg) {
+      margin-bottom: get-responsive-value(50);
+    }
+  }
+
+  &__slide-btn {
+    color: color(white);
+  }
+
+  &__pagination.splide__pagination {
+    position: absolute;
+    bottom: 31px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include media(tablet-lg) {
+      bottom: 86px;
+    }
+  }
+
+  &__progress.c-progress {
+    @include media(tablet-lg) {
+      height: 8px;
+    }
+  }
+
+  &__social-media-bar {
+    display: none;
+
+    @include media(tablet-lg) {
+      display: grid;
+      gap: 36px;
+      position: absolute;
+      right: 56px;
+      bottom: 108px;
+    }
+  }
+  &__social-media {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+    }
+  }
+
+  .c-animated-text {
+    .words {
+      transform: translateY(115%) !important;
+      transition-delay: calc(var(--index) * 0.1s) !important;
+    }
+  }
+
+  &__slide {
+    &.is-active {
+      .words {
+        transform: translateY(0) !important;
+        margin-top: -10px;
+      }
+
+      .ui-fade-in {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(var(--i) * 0.2s);
+      }
+    }
+  }
+}

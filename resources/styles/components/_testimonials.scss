@@ -1,0 +1,157 @@
+.c-testimonials {
+  position: relative;
+  text-align: center;
+  margin-top: 190px;
+  padding-bottom: 190px;
+
+  @include media(0, tablet-lg) {
+    margin-top: 90px;
+    padding-bottom: 90px;
+    .l-inner {
+      padding: 0;
+    }
+  }
+
+  .c-text-block {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  &__splide {
+    margin-top: 10px;
+    @include media(tablet-lg) {
+      margin-top: 50px;
+    }
+  }
+
+  &__track {
+    overflow: visible !important;
+  }
+
+  &__error {
+    background-color: color(primary);
+  }
+
+  &__item,
+  &__img-wrapper,
+  &__error {
+    height: 100vh;
+    @include media(tablet-lg) {
+      max-height: 645px;
+    }
+  }
+
+  &__img-wrapper,
+  &__progress-wrapper,
+  &__error {
+    grid-column: 1/13;
+    position: relative;
+
+    @include media(tablet-lg) {
+      grid-column: 2/12;
+    }
+  }
+
+  &__box {
+    @include typo-p2;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    padding: 50px;
+    max-width: 440px;
+
+    background-color: color(bg-light);
+    color: color(t-medium);
+
+    transform: translateY(-50%);
+    box-shadow: -4px -4px 40px rgba(231, 210, 183, 0.19);
+
+    &--big {
+      max-width: 870px;
+    }
+
+    @include media(0, tablet-lg) {
+      left: 16px;
+      right: 16px;
+      padding: 30px 16px;
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+
+  &__name {
+    @include typo-p1;
+    color: color(primary);
+    margin: 16px 0 0;
+    @include media(tablet-lg) {
+      margin: 30px 0 4px;
+    }
+  }
+
+  &__pagination {
+    top: 100%;
+    transform: translateY(15px);
+
+    @include media(tablet-lg) {
+      transform: translateY(30px);
+    }
+  }
+
+  &__top-circle {
+    position: absolute;
+    left: 0;
+    top: calc(-50px - 190px);
+    z-index: -1;
+    @include media(0, tablet-lg) {
+      top: calc(-50px - 90px);
+      left: -80px;
+      width: 250px;
+      height: 230px;
+    }
+  }
+
+  &__top-blob-right {
+    position: absolute;
+    right: 0;
+    top: calc(-50px - 190px);
+    z-index: -1;
+    @include media(0, tablet-lg) {
+      top: calc(-50px - 90px);
+      display: none;
+    }
+  }
+
+  &__ellipse-blob {
+    position: absolute;
+    top: calc(-40px - 90px);
+    right: 0;
+    z-index: -2;
+
+    @include media(tablet-lg) {
+      top: calc(-40px - 190px);
+    }
+  }
+
+  &__full-circle {
+    position: absolute;
+    bottom: -100px;
+    right: 70px;
+    z-index: -1;
+
+    @include media(0, tablet-lg) {
+      display: none;
+    }
+  }
+
+  &__big-blob {
+    position: absolute;
+    top: 344px;
+    right: 0;
+    z-index: -2;
+    @include media(0, tablet-lg) {
+      display: none;
+    }
+  }
+}
